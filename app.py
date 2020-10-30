@@ -14,7 +14,7 @@ st.title('The PhDs job market')
 @st.cache
 def load_salaries_data():
     
-    file = 'C:/Users/Felipe/Downloads/sed17-sr-tab049.xlsx'
+    file = 'data/sed17-sr-tab049.xlsx'
     data = pd.read_excel(file, skiprows=3)
     data.columns = ['field','academia','industry','government','nonprofit','other']
     return data
@@ -68,7 +68,7 @@ if st.checkbox('Show ranking'):
 @st.cache
 def load_unemployment_data():
     
-    file = 'C:/Users/Felipe/Downloads/sed17-sr-tab042.xlsx'
+    file = 'data/sed17-sr-tab042.xlsx'
     data = pd.read_excel(file, skiprows=3)
     data= data.iloc[19:,:]
     data = pd.melt(data, id_vars='Commitment status and year')
